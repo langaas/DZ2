@@ -1,0 +1,94 @@
+
+@import 'variables';
+@import 'mixins';
+
+body {
+  margin: 0;
+  font-family: $font-main;
+  background-color: white;
+  color: $text-color;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 20px 60px;
+  background-color: #fff;
+
+  h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  p {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    font-size: 18px;
+    color: #6b7280;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 60px;
+
+    a {
+      padding: 12px 24px;
+      border-radius: $button-radius;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      transition: 0.2s ease;
+
+      &.demo {
+        border: 1px solid #d1d5db;
+        color: #374151;
+      }
+
+      &.signup {
+        background-color: $primary-color;
+        color: white;
+      }
+    }
+  }
+
+  .image {
+    max-width: 100%;
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 900px;
+    }
+  }
+
+  @include tablet {
+    h1 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    .buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @include mobile {
+    h1 {
+      font-size: 26px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    .buttons a {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
